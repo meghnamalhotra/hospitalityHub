@@ -9,7 +9,7 @@ const Home = () => {
       <View style={styles.content}>
         <Button
           title="Go to Sign Up Page"
-          onPress={() => navigation.navigate('Details')}
+          onPress={() => navigation.navigate('Sign Up')}
         />
       </View>
     </SafeAreaView>
