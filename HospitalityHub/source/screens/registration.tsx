@@ -13,6 +13,7 @@ import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
 import {Colors} from '../assets/colors/Colors';
 import LinearGradient from 'react-native-linear-gradient';
+import Button from '../components/Button';
 
 const Registration = () => {
   return (
@@ -40,19 +41,7 @@ const Registration = () => {
           </View>
         </View>
 
-        <TouchableOpacity>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            colors={[
-              Colors.blueGradient1,
-              Colors.blueGradient2,
-              Colors.blueGradient3,
-            ]}
-            style={styles.confirmButton}>
-            <Text style={styles.buttonText}>Continue</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+        <Button title={'Continue'} />
 
         <View style={styles.subtext}>
           <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
