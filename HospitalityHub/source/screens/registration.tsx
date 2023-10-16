@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
   ScrollView,
+  KeyboardAvoidingView,
 } from 'react-native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
@@ -16,69 +17,78 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Registration = () => {
   return (
-    <SafeAreaView style={styles.main}>
-      <DeckSVG height={'42%'} style={styles.svg} />
-      <ScrollView style={styles.titleText}>
-        <Text style={styles.heading}>
-          Navigate the World, {'\n'}Book Your Bliss
-        </Text>
-        <View style={styles.subtext}>
-          <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
-          <Text style={styles.subheading}>Log in or sign up</Text>
-          <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
-        </View>
-        <View style={styles.inputBoxContainer}>
-          <View style={styles.flagContainer}>
-            <IndianFlag />
-          </View>
-          <View style={styles.inputBox}>
-            <Text style={styles.phoneCode}>+91</Text>
-            <TextInput
-              placeholder="Enter Mobile Number"
-              style={styles.inputText}
-            />
-          </View>
-        </View>
-
-        <TouchableOpacity>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            colors={[
-              Colors.blueGradient1,
-              Colors.blueGradient2,
-              Colors.blueGradient3,
-            ]}
-            style={styles.confirmButton}>
-            <Text style={styles.buttonText}>Continue</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        <View style={styles.subtext}>
-          <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
-          <Text style={styles.subheading}>or</Text>
-          <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
-        </View>
-
-        <View style={styles.socialContainer}>
-          <TouchableOpacity style={styles.socialButton}>
-            <GoogleSVG />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialButton}>
-            <FbSVG />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.footer}>
-          <Text style={styles.disclaimer1}>
-            By Continuing, you agree to our{'\n'}
-            <Text style={styles.disclaimer2}>Terms of Service</Text>
-            <Text> </Text>
-            <Text style={styles.disclaimer2}>Privacy Policy</Text>
+    <KeyboardAvoidingView style={{flex:1}}>
+      <SafeAreaView style={styles.main}>
+        <ScrollView style={styles.titleText}>
+          <DeckSVG
+            height={
+              Dimensions.get('screen').height > 700
+                ? Dimensions.get('screen').height * 0.34
+                : Dimensions.get('screen').height * 0.4
+            }
+            style={styles.svg}
+          />
+          <Text style={styles.heading}>
+            Navigate the World, {'\n'}Book Your Bliss
           </Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+          <View style={styles.subtext}>
+            <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
+            <Text style={styles.subheading}>Log in or sign up</Text>
+            <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
+          </View>
+          <View style={styles.inputBoxContainer}>
+            <View style={styles.flagContainer}>
+              <IndianFlag />
+            </View>
+            <View style={styles.inputBox}>
+              <Text style={styles.phoneCode}>+91</Text>
+              <TextInput
+                placeholder="Enter Mobile Number"
+                style={styles.inputText}
+              />
+            </View>
+          </View>
+
+          <TouchableOpacity>
+            <LinearGradient
+              start={{x: 0, y: 0}}
+              end={{x: 1, y: 0}}
+              colors={[
+                Colors.blueGradient1,
+                Colors.blueGradient2,
+                Colors.blueGradient3,
+              ]}
+              style={styles.confirmButton}>
+              <Text style={styles.buttonText}>Continue</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+
+          <View style={styles.subtext}>
+            <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
+            <Text style={styles.subheading}>or</Text>
+            <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
+          </View>
+
+          <View style={styles.socialContainer}>
+            <TouchableOpacity style={styles.socialButton}>
+              <GoogleSVG />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.socialButton}>
+              <FbSVG />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.footer}>
+            <Text style={styles.disclaimer1}>
+              By Continuing, you agree to our{'\n'}
+              <Text style={styles.disclaimer2}>Terms of Service</Text>
+              <Text> </Text>
+              <Text style={styles.disclaimer2}>Privacy Policy</Text>
+            </Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
