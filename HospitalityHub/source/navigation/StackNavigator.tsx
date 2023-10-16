@@ -26,7 +26,7 @@ const StackNavigator = () => {
           }}
         />
         <Stack.Screen
-          name="Sign Up"
+          name="Registration"
           component={Registration}
           options={{headerShown: false}}
         />
