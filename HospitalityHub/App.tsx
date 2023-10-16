@@ -117,13 +117,14 @@
 
 // export default App;
 import React, {useEffect} from 'react';
-import Stack1 from './source/navigation/StackNavigator';
+
+import StackNavigator from './source/navigation/StackNavigator';
 import SplashScreen from 'react-native-splash-screen';
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
-  return <Stack1 />;
+  return <StackNavigator />;
 };
 
 export default App;
