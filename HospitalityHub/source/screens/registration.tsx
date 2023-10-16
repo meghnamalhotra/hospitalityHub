@@ -12,10 +12,15 @@ import {
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
 import {Colors} from '../theme/colors';
-import LinearGradient from 'react-native-linear-gradient';
 import Button from '../components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const Registration = () => {
+  const navigation = useNavigation<any>();
+  const handlePress = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <SafeAreaView style={styles.main}>
       <DeckSVG height={'42%'} style={styles.svg} />
@@ -41,7 +46,7 @@ const Registration = () => {
           </View>
         </View>
 
-        <Button title={'Continue'} />
+        <Button title={'Continue'} onPress={handlePress} />
 
         <View style={styles.subtext}>
           <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />

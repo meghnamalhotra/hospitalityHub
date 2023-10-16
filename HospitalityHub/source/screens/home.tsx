@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core'; // TODO
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -19,9 +19,13 @@ import {
 } from '../assets/svgs';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Separator from '../components/separator';
+import Button from '../components/Button';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>(); // TODO
+  const handlePress = () => {
+    navigation.navigate('Registration');
+  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -127,16 +131,7 @@ const Home = () => {
         <TouchableOpacity>
           <Text style={styles.custumRating}>View Customer Reviews</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 10,
-            backgroundColor: 'red',
-          }}
-          onPress={() => navigation.navigate('Sign Up')}>
-          <Text>Book Hotel</Text>
-        </TouchableOpacity>
+        <Button title="Book Now" onPress={handlePress} />
       </ScrollView>
     </SafeAreaView>
   );
