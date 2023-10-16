@@ -9,6 +9,11 @@ import Wifi from './wifi.svg';
 import Car from './car.svg';
 import Star from './star.svg';
 import HalfStar from './halfstar.svg';
+import Image from './img.svg';
+import Heart from './heart.svg';
+import Booked from './booked.svg';
+import Profile from './profile.svg';
+import Maison from './home.svg';
 export {
   DeckSVG,
   IndianFlag,
@@ -21,4 +26,9 @@ export {
   Car,
   Star,
   HalfStar,
+  Image,
+  Heart,
+  Booked,
+  Profile,
+  Maison,
 };

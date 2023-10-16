@@ -10,9 +10,11 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import Registration from '../screens/registration';
+import TabNavigator from './TabNavigator';
+
 const Stack = createNativeStackNavigator();
 
-function Stack1() {
+const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -26,11 +28,16 @@ function Stack1() {
         <Stack.Screen
           name="Sign Up"
           component={Registration}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Tab Navigator"
+          component={TabNavigator}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
-export default Stack1;
+export default StackNavigator;
