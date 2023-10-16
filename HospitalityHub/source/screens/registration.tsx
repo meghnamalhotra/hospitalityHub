@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
-import {Colors} from '../assets/colors/Colors';
+import {Colors} from '../theme/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import Button from '../components/Button';
 
