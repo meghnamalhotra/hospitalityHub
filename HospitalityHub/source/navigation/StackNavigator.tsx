@@ -10,7 +10,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //import Home from '../screens/home';
 import Home from '../screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
-import Registration from '../screens/registration';
+import Registration from '../screens/Registration';
 import TabNavigator from './TabNavigator';
 import Otp from '../screens/Otp';
 
@@ -20,7 +20,7 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen
+        <Stack.Screen
           name="Registration"
           component={Registration}
           options={{headerShown: false}}
@@ -32,13 +32,13 @@ const StackNavigator = () => {
             headerShown: false,
           }}
         />
-       
+
         <Stack.Screen
           name="Tab Navigator"
           component={TabNavigator}
           options={{headerShown: false}}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Otp"
           component={Otp}
           options={{headerShown: false}}
