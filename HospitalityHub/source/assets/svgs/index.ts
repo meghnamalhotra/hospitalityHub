@@ -7,6 +7,9 @@ import Heart from './heart.svg';
 import Booked from './booked.svg';
 import Profile from './profile.svg';
 import Maison from './home.svg';
+import ProfileIcon from './profile_icon.svg';
+import Avatar from './avatar.svg';
+import Navigate from './navigate.svg';
 export {
   DeckSVG,
   IndianFlag,
@@ -17,4 +20,7 @@ export {
   Booked,
   Profile,
   Maison,
+  ProfileIcon,
+  Avatar,
+  Navigate,
 };

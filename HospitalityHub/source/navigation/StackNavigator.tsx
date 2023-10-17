@@ -11,6 +11,7 @@ import Home from '../screens/home';
 import {NavigationContainer} from '@react-navigation/native';
 import Registration from '../screens/registration';
 import TabNavigator from './TabNavigator';
+import ProfileEdit from '../screens/ProfileEdit';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const StackNavigator = () => {
           component={TabNavigator}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="Profile Edit" component={ProfileEdit} />
       </Stack.Navigator>
     </NavigationContainer>
   );
