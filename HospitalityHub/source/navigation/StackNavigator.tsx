@@ -19,7 +19,7 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen
+        <Stack.Screen
           name="Registration"
           component={Registration}
           options={{headerShown: false}}
@@ -31,13 +31,13 @@ const StackNavigator = () => {
             headerShown: false,
           }}
         />
-       
+
         <Stack.Screen
           name="Tab Navigator"
           component={TabNavigator}
           options={{headerShown: false}}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Otp"
           component={Otp}
           options={{headerShown: false}}
