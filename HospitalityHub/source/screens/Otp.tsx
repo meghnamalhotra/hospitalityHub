@@ -108,15 +108,9 @@ const Otp = () => {
             fontSize: 20,
             fontWeight: '700',
             color: count == 0 ? 'blue' : '#949494',
-          }}
-          onPress={() => {
-            setCount(60);
           }}>
           Resend
         </Text>
-        {/* {count !== 0 && (
-          <Text style={{marginLeft: 20, fontSize: 20}}>{count}</Text>
-        )} */}
       </View>
       <TouchableOpacity
         disabled={
