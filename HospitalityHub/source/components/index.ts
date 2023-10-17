@@ -1,3 +1,3 @@
 import Button from './Button';
-import Separator from './separator';
+import Separator from './Separator';
 export {Button, Separator};
