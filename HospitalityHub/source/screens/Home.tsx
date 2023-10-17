@@ -23,7 +23,7 @@ const Home = () => {
   const [redMore, setRedMore] = useState(false);
   const navigation = useNavigation<any>(); // TODO
   const handlePress = () => {
-    navigation.navigate('Registration');
+    navigation.navigate('Otp');
   };
   return (
     <SafeAreaView>
