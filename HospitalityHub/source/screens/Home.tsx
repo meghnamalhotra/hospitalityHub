@@ -7,6 +7,7 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {
   Car,
@@ -25,6 +26,20 @@ const Home = () => {
   const handlePress = () => {
     navigation.navigate('Otp');
   };
+  const DATA = [
+    {
+      id: 1,
+      image: <Swimming />,
+    },
+    {
+      id: 2,
+      image: <Car />,
+    },
+    {
+      id: 3,
+      image: <Wifi />,
+    },
+  ];
   return (
     <SafeAreaView>
       <ScrollView>
@@ -38,17 +53,16 @@ const Home = () => {
           </Text>
         </View>
         <Text style={styles.containerTxt}>What this Place Offers</Text>
-        <View style={styles.svgcontainer}>
-          <View style={styles.svgs}>
-            <Swimming />
-          </View>
-          <View style={styles.svgs}>
-            <Car />
-          </View>
-          <View style={styles.svgs}>
-            <Wifi />
-          </View>
-        </View>
+        <FlatList
+          data={DATA}
+          horizontal
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
+            <View style={styles.svgcontainer}>
+              <View style={styles.svgs}>{item.image}</View>
+            </View>
+          )}
+        />
         <Text style={styles.middleDetail}>About the Hotel</Text>
         <Text style={styles.aboutUs}>
           Lemon Tree Premier, City Center Pune is a great choice for travellers
@@ -158,7 +172,7 @@ const styles = StyleSheet.create({
   },
   svgcontainer: {
     flexDirection: 'row',
-    padding: 30,
+    padding: 15,
     justifyContent: 'space-between',
   },
   svgs: {
