@@ -18,8 +18,7 @@ import {
   Wifi,
 } from '../assets/svgs';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import Separator from '../components/separator';
-import Button from '../components/Button';
+import {Button, Separator} from '../components';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
   const navigation = useNavigation<any>(); // TODO

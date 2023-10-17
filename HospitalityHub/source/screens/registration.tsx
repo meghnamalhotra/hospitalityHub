@@ -11,11 +11,10 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
-import Separator from '../components/separator';
-import {Colors} from '../theme/colors';
-import Button from '../components/Button';
 import {useNavigation} from '@react-navigation/native';
+import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
+import {Separator, Button} from '../components';
+import {Colors} from '../theme/colors';
 
 const Registration = () => {
   const navigation = useNavigation<any>();
