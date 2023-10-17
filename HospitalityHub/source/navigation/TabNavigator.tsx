@@ -8,9 +8,18 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ErrorScreen from '../screens/ErrorScreen';
+
+import ProfilePage from '../screens/ProfilePage';
+
 import {Booked, Heart, Profile, Maison} from '../assets/svgs';
 
+
 const Tab = createBottomTabNavigator();
+
+const HomeTabIcon = () => <Maison width={28} height={28} />;
+const BookedTabIcon = () => <Heart width={28} height={28} />;
+const SavedTabIcon = () => <Booked width={28} height={28} />;
+const ProfileTabIcon = () => <Profile width={28} height={28} />;
 
 const TabNavigator = () => {
   return (
@@ -20,7 +29,7 @@ const TabNavigator = () => {
         component={ErrorScreen}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Maison width={24} height={24} />,
+          tabBarIcon: HomeTabIcon,
         }}
       />
       <Tab.Screen
@@ -28,7 +37,7 @@ const TabNavigator = () => {
         component={ErrorScreen}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Heart width={24} height={24} />,
+          tabBarIcon: BookedTabIcon,
         }}
       />
       <Tab.Screen
@@ -36,15 +45,15 @@ const TabNavigator = () => {
         component={ErrorScreen}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Booked width={24} height={24} />,
+          tabBarIcon: SavedTabIcon,
         }}
       />
       <Tab.Screen
         name="Profile"
-        component={ErrorScreen}
+        component={ProfilePage}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Profile width={24} height={24} />,
+          tabBarIcon: ProfileTabIcon,
         }}
       />
     </Tab.Navigator>
