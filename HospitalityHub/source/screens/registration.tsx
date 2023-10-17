@@ -9,6 +9,7 @@ import {
   Dimensions,
   ScrollView,
   KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
@@ -17,7 +18,9 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Registration = () => {
   return (
-    <KeyboardAvoidingView style={{flex:1}}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.main}>
       <SafeAreaView style={styles.main}>
         <ScrollView style={styles.titleText}>
           <DeckSVG
