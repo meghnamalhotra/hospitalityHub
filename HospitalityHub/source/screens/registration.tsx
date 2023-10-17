@@ -13,10 +13,16 @@ import {
 } from 'react-native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import Separator from '../components/separator';
-import {Colors} from '../assets/colors/Colors';
-import LinearGradient from 'react-native-linear-gradient';
+import {Colors} from '../theme/colors';
+import Button from '../components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const Registration = () => {
+  const navigation = useNavigation<any>();
+  const handlePress = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -52,19 +58,7 @@ const Registration = () => {
             </View>
           </View>
 
-          <TouchableOpacity>
-            <LinearGradient
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 0}}
-              colors={[
-                Colors.blueGradient1,
-                Colors.blueGradient2,
-                Colors.blueGradient3,
-              ]}
-              style={styles.confirmButton}>
-              <Text style={styles.buttonText}>Continue</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+          <Button title={'Continue'} onPress={handlePress} />
 
           <View style={styles.subtext}>
             <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
