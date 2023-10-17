@@ -9,7 +9,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/home';
 import {NavigationContainer} from '@react-navigation/native';
-import Registration from '../screens/registration';
+import Registration from '../screens/Registration';
 import TabNavigator from './TabNavigator';
 import Otp from '../screens/Otp';
 
