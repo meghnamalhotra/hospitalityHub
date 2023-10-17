@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {Colors} from '../assets/colors/Colors';
+import {Colors} from '../theme/colors';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Button: React.FC<ButtonProps> = ({title, onPress}) => {
