@@ -7,13 +7,8 @@
 
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import ErrorScreen from '../screens/ErrorScreen';
-import ProfilePage from '../screens/ProfilePage';
-import {Booked} from '../assets/svgs';
-import {Heart} from '../assets/svgs';
-import {Profile} from '../assets/svgs';
-import {Maison} from '../assets/svgs';
+import {Booked, Heart, Profile, Maison} from '../assets/svgs';
 
 const Tab = createBottomTabNavigator();
 

@@ -1,5 +1,5 @@
 import thunk from 'redux-thunk';
-import {counterReducer} from './reducer';
+import {counterReducer} from './Reducer';
 import {combineReducers} from 'redux';
 import {configureStore} from '@reduxjs/toolkit';
 
