@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/core'; // TODO
+import {useNavigation} from '@react-navigation/core';
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -90,21 +90,21 @@ const Home = () => {
           <Text style={styles.ratingNum}>4.5</Text>
         </View>
         <View style={styles.startSvg}>
-          <View style={{flexDirection: 'row'}}>
+          <View style={styles.ratingContainer}>
             <Star />
             <Star />
             <Star />
             <Star />
             <HalfStar />
           </View>
-          <Text style={{marginRight: 20, color: '#50A2BD'}}>234 Ratings</Text>
+          <Text style={styles.ratingText}>234 Ratings</Text>
         </View>
         <View style={styles.seperater}>
           <Separator height={1} width={'100%'} color={'#CFCFCF'} />
         </View>
-        <View style={{margin: 10}}>
+        <View style={styles.separatorAlign}>
           <View style={styles.middleSeperater}>
-            <Text style={styles.fontTxt}>Cleanness</Text>
+            <Text style={styles.fontTxt}>Cleanliness</Text>
             <Text style={styles.fontTxt}>10</Text>
           </View>
         </View>
@@ -149,7 +149,11 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     justifyContent: 'space-around',
   },
-  containerTxt: {fontSize: 20, fontWeight: 'bold', margin: 10},
+  containerTxt: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+  },
   hotelsvg: {
     alignSelf: 'center',
   },
@@ -172,12 +176,31 @@ const styles = StyleSheet.create({
 
     elevation: 5,
   },
-  middleDetail: {fontSize: 20, fontWeight: 'bold', margin: 10},
-
-  aboutUs: {marginHorizontal: 10},
-  redMore: {margin: 10, color: '#3D99EE', fontWeight: 'bold'},
-  ratingRev: {justifyContent: 'space-between', flexDirection: 'row'},
-  ratingRevCont: {fontSize: 20, fontWeight: 'bold', margin: 12},
+  separatorAlign: {
+    margin: 10,
+  },
+  middleDetail: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  aboutUs: {
+    marginHorizontal: 10,
+  },
+  redMore: {
+    margin: 10,
+    color: '#3D99EE',
+    fontWeight: 'bold',
+  },
+  ratingRev: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+  },
+  ratingRevCont: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 12,
+  },
   ratingNum: {
     fontSize: 25,
     fontWeight: 'bold',
@@ -185,18 +208,30 @@ const styles = StyleSheet.create({
     marginTop: 15,
     color: '#1E91B6',
   },
+  ratingText: {
+    marginRight: 20,
+    color: '#50A2BD',
+  },
   startSvg: {
     flexDirection: 'row',
     marginLeft: 17,
     justifyContent: 'space-between',
   },
-  fontTxt: {fontWeight: 'bold'},
+  fontTxt: {
+    fontWeight: 'bold',
+  },
   ratingCnt: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 10,
   },
-  seperater: {marginHorizontal: 20, marginTop: 7},
+  ratingContainer: {
+    flexDirection: 'row',
+  },
+  seperater: {
+    marginHorizontal: 20,
+    marginTop: 7,
+  },
   custumRating: {
     textAlign: 'center',
     color: '#1E91B6',
@@ -207,7 +242,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  bottomSeperater: {marginHorizontal: 10, marginTop: 30},
+  bottomSeperater: {
+    marginHorizontal: 10,
+    marginTop: 30,
+  },
 });
 
 export default Home;
