@@ -1,1 +1,3 @@
-// This file be for Export Components
+import Button from './Button';
+import Separator from './separator';
+export {Button, Separator};
