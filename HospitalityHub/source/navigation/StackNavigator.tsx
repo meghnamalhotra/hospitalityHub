@@ -27,6 +27,11 @@ const StackNavigator = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="Otp"
+          component={Otp}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name="Home"
           component={Home}
           options={{
@@ -41,11 +46,6 @@ const StackNavigator = () => {
         />
 
         <Stack.Screen name="Profile Edit" component={ProfileEdit} />
-        <Stack.Screen
-          name="Otp"
-          component={Otp}
-          options={{headerShown: false}}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );

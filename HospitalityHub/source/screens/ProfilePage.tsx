@@ -13,9 +13,8 @@ const ProfilePage = () => {
   const navigation = useNavigation<any>();
 
   const handlePress = (menuItem: string) => {
-    console.log(`Pressed ${menuItem}`);
     if (menuItem === 'Profile') {
-      navigation.navigate('Profile');
+      navigation.navigate('Profile Edit');
     }
   };
 

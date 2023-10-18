@@ -26,6 +26,7 @@ const Home = () => {
   const handlePress = () => {
     navigation.navigate('Otp');
   };
+
   const DATA = [
     {
       id: 1,
@@ -56,7 +57,7 @@ const Home = () => {
         <FlatList
           data={DATA}
           horizontal
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id.toString()}
           renderItem={({item}) => (
             <View style={styles.svgcontainer}>
               <View style={styles.svgs}>{item.image}</View>
