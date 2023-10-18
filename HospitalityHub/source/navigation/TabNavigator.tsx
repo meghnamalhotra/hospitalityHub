@@ -8,19 +8,35 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ErrorScreen from '../screens/ErrorScreen';
-import {Booked, Heart, Profile, Maison} from '../assets/svgs';
+
+import ProfilePage from '../screens/ProfilePage';
+import Home from '../screens/Home';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
+
+const HomeTabIcon = () => (
+  <MaterialCommunityIcons name="home-circle" size={30} />
+);
+const BookedTabIcon = () => (
+  <MaterialCommunityIcons name="bookmark-multiple" size={30} />
+);
+const SavedTabIcon = () => (
+  <MaterialCommunityIcons name="heart-circle" size={30} />
+);
+const ProfileTabIcon = () => (
+  <MaterialCommunityIcons name="account-circle" size={30} />
+);
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
-        component={ErrorScreen}
+        component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Maison width={24} height={24} />,
+          tabBarIcon: HomeTabIcon,
         }}
       />
       <Tab.Screen
@@ -28,7 +44,7 @@ const TabNavigator = () => {
         component={ErrorScreen}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Heart width={24} height={24} />,
+          tabBarIcon: BookedTabIcon,
         }}
       />
       <Tab.Screen
@@ -36,15 +52,15 @@ const TabNavigator = () => {
         component={ErrorScreen}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Booked width={24} height={24} />,
+          tabBarIcon: SavedTabIcon,
         }}
       />
       <Tab.Screen
         name="Profile"
-        component={ErrorScreen}
+        component={ProfilePage}
         options={{
           headerShown: false,
-          tabBarIcon: () => <Profile width={24} height={24} />,
+          tabBarIcon: ProfileTabIcon,
         }}
       />
     </Tab.Navigator>

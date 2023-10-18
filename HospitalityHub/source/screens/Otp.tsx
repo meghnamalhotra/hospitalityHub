@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
@@ -9,10 +10,11 @@ import {
 } from 'react-native';
 import {Colors} from '../theme/colors';
 const Otp = () => {
-  const et1 = useRef();
-  const et2 = useRef();
-  const et3 = useRef();
-  const et4 = useRef();
+  const navigation = useNavigation<any>();
+  const et1 = useRef<any>();
+  const et2 = useRef<any>();
+  const et3 = useRef<any>();
+  const et4 = useRef<any>();
   const [f1, setF1] = useState('');
   const [f2, setF2] = useState('');
   const [f3, setF3] = useState('');
@@ -124,7 +126,8 @@ const Otp = () => {
                 ? Colors.blue
                 : Colors.grey,
           },
-        ]}>
+        ]}
+        onPress={() => navigation.navigate('Tab Navigator')}>
         <Text style={styles.btnTxt}>Verify OTP</Text>
       </TouchableOpacity>
     </View>

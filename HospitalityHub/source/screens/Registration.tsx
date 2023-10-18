@@ -19,7 +19,7 @@ import {Colors} from '../theme/colors';
 const Registration = () => {
   const navigation = useNavigation<any>();
   const handlePress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Otp');
   };
 
   return (
@@ -53,6 +53,7 @@ const Registration = () => {
               <TextInput
                 placeholder="Enter Mobile Number"
                 style={styles.inputText}
+                maxLength={10}
               />
             </View>
           </View>
