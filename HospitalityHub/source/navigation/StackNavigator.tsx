@@ -7,7 +7,6 @@
 
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-//import Home from '../screens/home';
 import Home from '../screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import Registration from '../screens/Registration';
@@ -15,7 +14,6 @@ import TabNavigator from './TabNavigator';
 
 import ProfileEdit from '../screens/ProfileEdit';
 import Otp from '../screens/Otp';
-
 
 const Stack = createNativeStackNavigator();
 
