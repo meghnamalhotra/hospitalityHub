@@ -8,7 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-
+import {Colors} from '../theme/colors';
 const Otp = () => {
   const navigation = useNavigation<any>();
   const et1 = useRef<any>();
@@ -37,7 +37,7 @@ const Otp = () => {
           ref={et1}
           style={[
             styles.inputView,
-            {borderColor: f1.length >= 1 ? 'blue' : '#000'},
+            {borderColor: f1.length >= 1 ? Colors.blue : Colors.black},
           ]}
           value={f1}
           keyboardType="number-pad"
@@ -53,7 +53,7 @@ const Otp = () => {
           ref={et2}
           style={[
             styles.inputView,
-            {borderColor: f2.length >= 1 ? 'blue' : '#000'},
+            {borderColor: f2.length >= 1 ? Colors.blue : Colors.black},
           ]}
           keyboardType="number-pad"
           value={f2}
@@ -71,7 +71,7 @@ const Otp = () => {
           ref={et3}
           style={[
             styles.inputView,
-            {borderColor: f3.length >= 1 ? 'blue' : '#000'},
+            {borderColor: f3.length >= 1 ? Colors.blue : Colors.black},
           ]}
           value={f3}
           keyboardType="number-pad"
@@ -89,7 +89,7 @@ const Otp = () => {
           ref={et4}
           style={[
             styles.inputView,
-            {borderColor: f4.length >= 1 ? 'blue' : '#000'},
+            {borderColor: f4.length >= 1 ? Colors.blue : Colors.black},
           ]}
           value={f4}
           keyboardType="number-pad"
@@ -109,7 +109,7 @@ const Otp = () => {
           style={{
             fontSize: 20,
             fontWeight: '700',
-            color: count === 0 ? 'blue' : '#949494',
+            color: count === 0 ? Colors.blue : Colors.grey,
           }}>
           Resend
         </Text>
@@ -123,8 +123,8 @@ const Otp = () => {
           {
             backgroundColor:
               f1 !== '' && f2 !== '' && f3 !== '' && f4 !== ''
-                ? 'blue'
-                : '#949494',
+                ? Colors.blue
+                : Colors.grey,
           },
         ]}
         onPress={() => navigation.navigate('Tab Navigator')}>
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginTop: 100,
     alignSelf: 'center',
-    color: '#000',
+    color: Colors.black,
   },
   otpView: {
     width: '100%',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   verifyOtpBtn: {
     width: '50%',
     height: 55,
-    backgroundColor: 'blue',
+    backgroundColor: Colors.blue,
     borderRadius: 20,
     alignSelf: 'center',
     justifyContent: 'center',
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   btnTxt: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 20,
   },
   resendView: {
