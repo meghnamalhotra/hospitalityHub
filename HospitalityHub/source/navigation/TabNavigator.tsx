@@ -10,6 +10,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ErrorScreen from '../screens/ErrorScreen';
 import {Booked, Heart, Profile, Maison} from '../assets/svgs';
 
+import ProfilePage from '../screens/ProfilePage';
+
 const Tab = createBottomTabNavigator();
 
 const HomeTabIcon = () => <Maison width={28} height={28} />;
