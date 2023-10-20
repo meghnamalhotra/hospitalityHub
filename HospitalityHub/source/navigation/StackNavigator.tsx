@@ -13,7 +13,9 @@ import TabNavigator from './TabNavigator';
 import Otp from '../screens/Otp';
 import Faq from '../screens/Faq';
 import ProfileEdit from '../screens/ProfileEdit';
+import TermsScreen from '../screens/TermsScreen';
 import CustomerReview from '../screens/CustomerReview';
+
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -25,6 +27,7 @@ const StackNavigator = () => {
           component={Registration}
           options={{headerShown: false}}
         />
+
         <Stack.Screen
           name="Otp"
           component={Otp}
@@ -43,7 +46,12 @@ const StackNavigator = () => {
         <Stack.Screen
           name="ProfileEdit"
           component={ProfileEdit}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="TermsScreen"
+          component={TermsScreen}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="CustomerReview"
