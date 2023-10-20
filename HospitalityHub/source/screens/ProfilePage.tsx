@@ -15,6 +15,7 @@ const ProfilePage = () => {
   const handlePress = (menuItem: string) => {
     if (menuItem === 'Profile') {
       navigation.navigate('ProfileEdit');
+      navigation.navigate('Profile Edit');
     } else {
       navigation.navigate('Faq');
     }

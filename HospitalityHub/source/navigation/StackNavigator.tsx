@@ -14,6 +14,7 @@ import Otp from '../screens/Otp';
 import Faq from '../screens/Faq';
 import ProfileEdit from '../screens/ProfileEdit';
 
+
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
