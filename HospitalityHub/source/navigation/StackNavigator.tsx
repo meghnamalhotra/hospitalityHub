@@ -11,7 +11,6 @@ import Home from '../screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import Registration from '../screens/Registration';
 import TabNavigator from './TabNavigator';
-
 import ProfileEdit from '../screens/ProfileEdit';
 import Otp from '../screens/Otp';
 
@@ -40,12 +39,12 @@ const StackNavigator = () => {
         />
 
         <Stack.Screen
-          name="Tab Navigator"
+          name="TabNavigator"
           component={TabNavigator}
           options={{headerShown: false}}
         />
 
-        <Stack.Screen name="Profile Edit" component={ProfileEdit} />
+        <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       </Stack.Navigator>
     </NavigationContainer>
   );
