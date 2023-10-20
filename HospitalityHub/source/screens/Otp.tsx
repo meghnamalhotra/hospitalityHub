@@ -19,16 +19,6 @@ const Otp = () => {
   const [f2, setF2] = useState('');
   const [f3, setF3] = useState('');
   const [f4, setF4] = useState('');
-  const [count, setCount] = useState(60);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (count === 0) {
-        clearInterval(interval);
-      } else {
-        setCount(count - 1);
-      }
-    }, 1000);
-  }, [count]);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>OTP Verification</Text>
@@ -109,7 +99,6 @@ const Otp = () => {
           style={{
             fontSize: 20,
             fontWeight: '700',
-            color: count === 0 ? Colors.blue : Colors.grey,
           }}>
           Resend
         </Text>
