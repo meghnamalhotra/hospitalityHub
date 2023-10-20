@@ -26,7 +26,6 @@ const Home = () => {
   const handlePress = () => {
     navigation.navigate('Otp');
   };
-
   const DATA = [
     {
       id: 1,
@@ -142,7 +141,10 @@ const Home = () => {
         <View style={styles.bottomSeperater}>
           <Separator height={1} width={'100%'} color={'#CFCFCF'} />
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('CustomerReview');
+          }}>
           <Text style={styles.custumRating}>View Customer Reviews</Text>
         </TouchableOpacity>
         <Button title="Book Now" onPress={handlePress} />
