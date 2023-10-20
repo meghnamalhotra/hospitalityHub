@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Dimensions} from 'react-native';
 import {Colors} from '../theme/colors';
 import {typography} from '../theme/typography';
 import {Button} from '../components';
@@ -114,13 +114,15 @@ const Otp = () => {
           {count === 0 ? 'Resend' : `Resend in ${count}s`}
         </Text>
       </View>
-      <Button
-        title="Verify OTP"
-        onPress={() => navigation.navigate('TabNavigator')}
-        disabled={
-          f1 !== '' && f2 !== '' && f3 !== '' && f4 !== '' ? false : true
-        }
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Verify OTP"
+          onPress={() => navigation.navigate('TabNavigator')}
+          disabled={
+            f1 !== '' && f2 !== '' && f3 !== '' && f4 !== '' ? false : true
+          }
+        />
+      </View>
     </View>
   );
 };
@@ -152,6 +154,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: '700',
+    color: Colors.black,
   },
   verifyOtpBtn: {
     width: '50%',
@@ -171,6 +174,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     marginTop: 30,
+  },
+  buttonContainer: {
+    marginVertical: '5%',
+    marginHorizontal: '15%',
   },
 });
 
