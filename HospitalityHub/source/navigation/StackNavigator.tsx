@@ -13,7 +13,7 @@ import TabNavigator from './TabNavigator';
 import Otp from '../screens/Otp';
 import Faq from '../screens/Faq';
 import ProfileEdit from '../screens/ProfileEdit';
-
+import CustomerReview from '../screens/CustomerReview';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -44,6 +44,11 @@ const StackNavigator = () => {
           name="ProfileEdit"
           component={ProfileEdit}
           options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name="CustomerReview"
+          component={CustomerReview}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
