@@ -2,7 +2,7 @@ export const typography = {
   /**
    * The primary font.  Used in most places.
    */
-  primary: 'Poppins-ExtraBoldItalic',
+  primary: 'Poppins-Regular',
   /**
    * An alternate font used for titles and stuff.
    */

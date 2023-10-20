@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     textAlign: 'center',
     fontSize: 30,
-   // fontWeight: '700',
   },
   subtext: {
     flexDirection: 'row',
@@ -121,6 +120,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Colors.subHeadingBlack,
     marginVertical: '2%',
+    fontFamily: typography.secondary,
   },
   inputBoxContainer: {
     flexDirection: 'row',
@@ -237,6 +237,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 14,
     fontWeight: '600',
+    fontFamily: typography.secondary,
   },
   disclaimer2: {
     textAlign: 'center',
