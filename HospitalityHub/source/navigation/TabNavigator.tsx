@@ -34,11 +34,7 @@ const SavedTabIcon = (focused: boolean) =>
   focused ? (
     <MaterialCommunityIcons name="heart-circle" size={30} />
   ) : (
-    <MaterialCommunityIcons
-      name="heart-circle-outline"
-      color={Colors.dullBlack}
-      size={30}
-    />
+    <MaterialCommunityIcons name="heart-circle-outline" size={30} />
   );
 const ProfileTabIcon = (focused: boolean) =>
   focused ? (

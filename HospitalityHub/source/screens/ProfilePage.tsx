@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Avatar, Navigate, ProfileIcon} from '../assets/svgs';
+import {Colors} from '../theme/colors';
 
 const ProfilePage = () => {
   const navigation = useNavigation<any>();
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
+    backgroundColor: Colors.backgroundColor,
   },
   profileInfo: {
     marginLeft: 16,
