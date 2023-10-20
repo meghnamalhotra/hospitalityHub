@@ -6,32 +6,73 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import BookingScreen from '../screens/BookingScreen';
 import SavedScreen from '../screens/SavedScreen';
 
+import {Colors} from '../theme/colors';
+
 const Tab = createBottomTabNavigator();
 
-const HomeTabIcon = () => (
-  <MaterialCommunityIcons name="home-circle" size={30} />
-);
-
-const BookedTabIcon = () => (
-  <MaterialCommunityIcons name="bookmark-multiple" size={30} />
-);
-const SavedTabIcon = () => (
-  <MaterialCommunityIcons name="heart-circle" size={30} />
-);
-
-const ProfileTabIcon = () => (
-  <MaterialCommunityIcons name="account-circle" size={30} />
-);
+const HomeTabIcon = (focused: boolean) =>
+  focused ? (
+    <MaterialCommunityIcons name="home-circle" size={30} />
+  ) : (
+    <MaterialCommunityIcons
+      name="home-circle-outline"
+      color={Colors.dullBlack}
+      size={30}
+    />
+  );
+const BookedTabIcon = (focused: boolean) =>
+  focused ? (
+    <MaterialCommunityIcons name="bookmark-multiple" size={30} />
+  ) : (
+    <MaterialCommunityIcons
+      name="bookmark-multiple-outline"
+      color={Colors.dullBlack}
+      size={30}
+    />
+  );
+const SavedTabIcon = (focused: boolean) =>
+  focused ? (
+    <MaterialCommunityIcons name="heart-circle" size={30} />
+  ) : (
+    <MaterialCommunityIcons
+      name="heart-circle-outline"
+      color={Colors.dullBlack}
+      size={30}
+    />
+  );
+const ProfileTabIcon = (focused: boolean) =>
+  focused ? (
+    <MaterialCommunityIcons name="account-circle" size={30} />
+  ) : (
+    <MaterialCommunityIcons
+      name="account-circle-outline"
+      color={Colors.dullBlack}
+      size={30}
+    />
+  );
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: '400',
+          marginBottom: '5%',
+        },
+        tabBarStyle: {
+          backgroundColor: 'rgba(255,255,255,0.7)',
+          borderTopWidth: 0,
+          height: '8.5%',
+        },
+      }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: HomeTabIcon,
+          tabBarActiveTintColor: Colors.black,
+          tabBarIcon: ({focused}) => HomeTabIcon(focused),
         }}
       />
       <Tab.Screen
@@ -39,7 +80,8 @@ const TabNavigator = () => {
         component={BookingScreen}
         options={{
           headerShown: false,
-          tabBarIcon: BookedTabIcon,
+          tabBarActiveTintColor: Colors.black,
+          tabBarIcon: ({focused}) => BookedTabIcon(focused),
         }}
       />
       <Tab.Screen
@@ -47,7 +89,8 @@ const TabNavigator = () => {
         component={SavedScreen}
         options={{
           headerShown: false,
-          tabBarIcon: SavedTabIcon,
+          tabBarActiveTintColor: Colors.black,
+          tabBarIcon: ({focused}) => SavedTabIcon(focused),
         }}
       />
       <Tab.Screen
@@ -55,7 +98,8 @@ const TabNavigator = () => {
         component={ProfilePage}
         options={{
           headerShown: false,
-          tabBarIcon: ProfileTabIcon,
+          tabBarActiveTintColor: Colors.black,
+          tabBarIcon: ({focused}) => ProfileTabIcon(focused),
         }}
       />
     </Tab.Navigator>
