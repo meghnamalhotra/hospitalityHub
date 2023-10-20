@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {Colors} from '../theme/colors';
 import {typography} from '../theme/typography';
 import {Button} from '../components';

@@ -41,9 +41,17 @@ const Registration = () => {
             Navigate the World, {'\n'}Book Your Bliss
           </Text>
           <View style={styles.subtext}>
-            <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
+            <Separator
+              width={'15%'}
+              height={'4%'}
+              backgroundColor={Colors.borderGray}
+            />
             <Text style={styles.subheading}>Log in or sign up</Text>
-            <Separator width={'15%'} height={'4%'} color={Colors.borderGray} />
+            <Separator
+              width={'15%'}
+              height={'4%'}
+              backgroundColor={Colors.borderGray}
+            />
           </View>
           <View style={styles.inputBoxContainer}>
             <View style={styles.flagContainer}>
@@ -63,9 +71,17 @@ const Registration = () => {
           <Button title={'Continue'} onPress={handlePress} />
 
           <View style={styles.subtext}>
-            <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
+            <Separator
+              width={'35%'}
+              height={'4%'}
+              backgroundColor={Colors.borderGray}
+            />
             <Text style={styles.subheading}>or</Text>
-            <Separator width={'35%'} height={'4%'} color={Colors.borderGray} />
+            <Separator
+              width={'35%'}
+              height={'4%'}
+              backgroundColor={Colors.borderGray}
+            />
           </View>
 
           <View style={styles.socialContainer}>
@@ -78,7 +94,9 @@ const Registration = () => {
           </View>
 
           <View style={styles.footer}>
-            <Text style={styles.disclaimer1}>
+            <Text
+              style={styles.disclaimer1}
+              onPress={() => navigation.navigate('TermsScreen')}>
               By Continuing, you agree to our{'\n'}
               <Text style={styles.disclaimer2}>Terms of Service</Text>
               <Text> </Text>

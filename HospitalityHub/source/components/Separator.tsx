@@ -1,9 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
 
-const Separator = ({width, height, color}: any) => {
+interface Props {
+  width: any;
+  height: any;
+  backgroundColor: string;
+}
+
+const Separator: React.FC<Props> = ({width, height, backgroundColor}) => {
   return (
-    <View style={{width: width, height: height, backgroundColor: color}} />
+    <View
+      style={{width: width, height: height, backgroundColor: backgroundColor}}
+    />
   );
 };
 
