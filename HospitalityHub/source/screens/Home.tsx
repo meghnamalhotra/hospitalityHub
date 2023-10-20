@@ -48,7 +48,7 @@ const Home = () => {
         <Text style={styles.headerTxt}>Lemon Tree Premier Pune</Text>
         <View style={styles.locationTxt}>
           <Location />
-          <Text>
+          <Text style={{color: Colors.black}}>
             City Center, 15 & 15A, Connaught Rd, Modi Colony, Pune, Maharashtra
             411001
           </Text>
@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     margin: 10,
+    color: Colors.black,
   },
   locationTxt: {
     flexDirection: 'row',
@@ -167,13 +168,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin: 10,
+    color: Colors.black,
   },
   hotelsvg: {
     alignSelf: 'center',
   },
   svgcontainer: {
     flexDirection: 'row',
-    padding: 15,
+    padding: 22,
     justifyContent: 'space-between',
   },
   svgs: {
@@ -196,9 +198,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin: 10,
+    color: Colors.black,
   },
   aboutUs: {
     marginHorizontal: 10,
+    color: Colors.black,
   },
   redMore: {
     margin: 10,
@@ -213,6 +217,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin: 12,
+    color: Colors.black,
   },
   ratingNum: {
     fontSize: 25,
@@ -232,6 +237,7 @@ const styles = StyleSheet.create({
   },
   fontTxt: {
     fontWeight: 'bold',
+    color: Colors.black,
   },
   ratingCnt: {
     flexDirection: 'row',

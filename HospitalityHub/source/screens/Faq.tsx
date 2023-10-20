@@ -97,14 +97,7 @@ const Faq = () => {
             Can’t find the answer you’re looking for? Please chat to our
             friendly team.
           </Text>
-          <View
-            style={{
-              backgroundColor: '#7F56D9',
-              padding: 10,
-              margin: 30,
-              marginHorizontal: 50,
-              borderRadius: 8,
-            }}>
+          <View style={styles.buttn}>
             <TouchableOpacity>
               <Text style={{textAlign: 'center', color: Colors.white}}>
                 Get in Touch
@@ -128,7 +121,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   topContainer: {
-    backgroundColor: Colors.lightgray,
+    backgroundColor: Colors.backgroundColor,
     paddingBottom: 30,
   },
   midContainerHeading: {
@@ -152,6 +145,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 20,
     color: Colors.grey,
+  },
+  buttn: {
+    backgroundColor: '#7F56D9',
+    padding: 10,
+    margin: 30,
+    marginHorizontal: 50,
+    borderRadius: 8,
   },
 });
 export default Faq;
