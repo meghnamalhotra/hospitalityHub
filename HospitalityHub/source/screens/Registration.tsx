@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     textAlign: 'center',
     fontSize: 30,
-   // fontWeight: '700',
   },
   subtext: {
     flexDirection: 'row',
