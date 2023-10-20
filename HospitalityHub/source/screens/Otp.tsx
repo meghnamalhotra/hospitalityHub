@@ -19,6 +19,19 @@ const Otp = () => {
   const [f2, setF2] = useState('');
   const [f3, setF3] = useState('');
   const [f4, setF4] = useState('');
+  const [count, setCount] = useState(30);
+  useEffect(() => {
+    if (count > 0) {
+      const timer = setTimeout(() => {
+        setCount(count - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [count]);
+
+  const handleResendbtn = () => {
+    setCount(30);
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>OTP Verification</Text>
@@ -97,10 +110,12 @@ const Otp = () => {
       <View style={styles.resendView}>
         <Text
           style={{
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: '700',
-          }}>
-          Resend
+            color: count === 0 ? Colors.blue : Colors.grey,
+          }}
+          onPress={handleResendbtn}>
+          {count === 0 ? 'Resend' : `Resend in ${count}s`}
         </Text>
       </View>
       <TouchableOpacity
@@ -116,7 +131,7 @@ const Otp = () => {
                 : Colors.grey,
           },
         ]}
-        onPress={() => navigation.navigate('Tab Navigator')}>
+        onPress={() => navigation.navigate('TabNavigator')}>
         <Text style={styles.btnTxt}>Verify OTP</Text>
       </TouchableOpacity>
     </View>

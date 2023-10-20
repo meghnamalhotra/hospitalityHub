@@ -17,6 +17,7 @@ import Maison from './home.svg';
 import ProfileIcon from './profile_icon.svg';
 import Avatar from './avatar.svg';
 import Navigate from './navigate.svg';
+import SupportImg from './SupportImage.svg';
 export {
   DeckSVG,
   IndianFlag,
@@ -30,6 +31,7 @@ export {
   Star,
   HalfStar,
   Image,
+  SupportImg,
   Heart,
   Booked,
   Profile,

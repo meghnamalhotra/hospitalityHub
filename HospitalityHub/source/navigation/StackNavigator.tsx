@@ -7,13 +7,13 @@
 
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from '../screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import Registration from '../screens/Registration';
 import TabNavigator from './TabNavigator';
-
-import ProfileEdit from '../screens/ProfileEdit';
 import Otp from '../screens/Otp';
+import Faq from '../screens/Faq';
+import ProfileEdit from '../screens/ProfileEdit';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ const StackNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Registration"
+          name="Sign Up"
           component={Registration}
           options={{headerShown: false}}
         />
@@ -32,20 +32,20 @@ const StackNavigator = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-          }}
-        />
-
-        <Stack.Screen
-          name="Tab Navigator"
+          name="TabNavigator"
           component={TabNavigator}
           options={{headerShown: false}}
         />
-
-        <Stack.Screen name="Profile Edit" component={ProfileEdit} />
+        <Stack.Screen
+          name="Faq"
+          component={Faq}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileEdit"
+          component={ProfileEdit}
+          options={{headerShown: true}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

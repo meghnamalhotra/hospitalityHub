@@ -15,6 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import {Separator, Button} from '../components';
 import {Colors} from '../theme/colors';
+import {typography} from '../theme/typography';
 
 const Registration = () => {
   const navigation = useNavigation<any>();
@@ -53,6 +54,7 @@ const Registration = () => {
               <TextInput
                 placeholder="Enter Mobile Number"
                 style={styles.inputText}
+                placeholderTextColor={Colors.lightgray}
                 maxLength={10}
               />
             </View>
@@ -100,10 +102,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heading: {
+    fontFamily: typography.primary,
+    color: Colors.black,
     marginTop: '4%',
     textAlign: 'center',
     fontSize: 30,
-    fontWeight: '700',
+   // fontWeight: '700',
   },
   subtext: {
     flexDirection: 'row',
@@ -178,6 +182,7 @@ const styles = StyleSheet.create({
   phoneCode: {
     fontSize: 16,
     fontWeight: '600',
+    color: Colors.black,
   },
   buttonText: {
     color: Colors.white,
@@ -228,6 +233,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disclaimer1: {
+    color: Colors.black,
     textAlign: 'center',
     fontSize: 14,
     fontWeight: '600',
