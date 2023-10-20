@@ -7,6 +7,7 @@ import BookingScreen from '../screens/BookingScreen';
 import SavedScreen from '../screens/SavedScreen';
 
 import {Colors} from '../theme/colors';
+import {Dimensions, Platform} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -75,7 +76,13 @@ const TabNavigator = () => {
         tabBarStyle: {
           backgroundColor: 'rgba(255,255,255,0.7)',
           borderTopWidth: 0,
-          height: '8.5%',
+          height:
+            Dimensions.get('screen').height < 700
+              ? '8.5%'
+              : Platform.OS === 'android'
+              ? '7.5%'
+              : '11%',
+          elevation: 0,
         },
       }}>
       <Tab.Screen
