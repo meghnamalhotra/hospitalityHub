@@ -8,19 +8,20 @@ import {
 } from 'react-native';
 import {Colors} from '../theme/colors';
 import LinearGradient from 'react-native-linear-gradient';
+import {typography} from '../theme/typography';
 
-const Button: React.FC<ButtonProps> = ({title, onPress}) => {
+const Button: React.FC<ButtonProps> = ({title, onPress, disabled}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} disabled={disabled}>
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
-        colors={[
-          Colors.blueGradient1,
-          Colors.blueGradient2,
-          Colors.blueGradient3,
-        ]}
-        style={styles.confirmButton}>
+        colors={
+          disabled
+            ? [Colors.grey, Colors.grey]
+            : [Colors.blueGradient1, Colors.blueGradient2, Colors.blueGradient3]
+        }
+        style={[styles.confirmButton, disabled && styles.disabledButton]}>
         <Text style={styles.buttonText}>{title}</Text>
       </LinearGradient>
     </TouchableOpacity>
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     paddingVertical: 10,
+    fontFamily: typography.secondary,
   },
   confirmButton: {
     marginTop: '2%',
@@ -46,6 +48,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 5,
+  },
+  disabledButton: {
+    opacity: 0.6,
   },
 });
 

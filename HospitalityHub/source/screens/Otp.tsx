@@ -1,14 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {Colors} from '../theme/colors';
+import {typography} from '../theme/typography';
+import {Button} from '../components';
 const Otp = () => {
   const navigation = useNavigation<any>();
   const et1 = useRef<any>();
@@ -118,22 +114,13 @@ const Otp = () => {
           {count === 0 ? 'Resend' : `Resend in ${count}s`}
         </Text>
       </View>
-      <TouchableOpacity
+      <Button
+        title="Verify OTP"
+        onPress={() => navigation.navigate('TabNavigator')}
         disabled={
           f1 !== '' && f2 !== '' && f3 !== '' && f4 !== '' ? false : true
         }
-        style={[
-          styles.verifyOtpBtn,
-          {
-            backgroundColor:
-              f1 !== '' && f2 !== '' && f3 !== '' && f4 !== ''
-                ? Colors.blue
-                : Colors.grey,
-          },
-        ]}
-        onPress={() => navigation.navigate('TabNavigator')}>
-        <Text style={styles.btnTxt}>Verify OTP</Text>
-      </TouchableOpacity>
+      />
     </View>
   );
 };
@@ -147,6 +134,7 @@ const styles = StyleSheet.create({
     marginTop: 100,
     alignSelf: 'center',
     color: Colors.black,
+    fontFamily: typography.primary,
   },
   otpView: {
     width: '100%',
