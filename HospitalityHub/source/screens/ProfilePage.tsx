@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Avatar, Navigate, ProfileIcon} from '../assets/svgs';
+import {Navigate, ProfileIcon} from '../assets/svgs';
 import {Colors} from '../theme/colors';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ProfilePage = () => {
   const navigation = useNavigation<any>();
@@ -16,7 +17,6 @@ const ProfilePage = () => {
   const handlePress = (menuItem: string) => {
     if (menuItem === 'Profile') {
       navigation.navigate('ProfileEdit');
-      navigation.navigate('Profile Edit');
     } else {
       navigation.navigate('Faq');
     }
@@ -36,7 +36,7 @@ const ProfilePage = () => {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => handlePress('Profile')}>
-          <Avatar />
+          <MaterialCommunityIcons name="account" size={18} />
           <View style={styles.menuText}>
             <Text style={styles.menuItemText}>Profile</Text>
             <Navigate />
@@ -45,7 +45,7 @@ const ProfilePage = () => {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => handlePress('Settings')}>
-          <Avatar />
+          <MaterialCommunityIcons name="cog" size={18} />
           <View style={styles.menuText}>
             <Text style={styles.menuItemText}>Settings</Text>
             <Navigate />
@@ -54,7 +54,7 @@ const ProfilePage = () => {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => handlePress('Notifications')}>
-          <Avatar />
+          <MaterialCommunityIcons name="bell" size={18} />
           <View style={styles.menuText}>
             <Text style={styles.menuItemText}>Notifications</Text>
             <Navigate />
@@ -63,7 +63,7 @@ const ProfilePage = () => {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => handlePress('BookingHistory')}>
-          <Avatar />
+          <MaterialCommunityIcons name="history" size={18} />
           <View style={styles.menuText}>
             <Text style={styles.menuItemText}>Booking History</Text>
             <Navigate />
@@ -72,7 +72,7 @@ const ProfilePage = () => {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => handlePress('CustomerSupport')}>
-          <Avatar />
+          <MaterialCommunityIcons name="headset" size={18} />
           <View style={styles.menuText}>
             <Text style={styles.menuItemText}>Customer Support</Text>
             <Navigate />
