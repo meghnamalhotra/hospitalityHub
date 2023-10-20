@@ -18,7 +18,7 @@ import {
   Swimming,
   Wifi,
 } from '../assets/svgs';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
@@ -187,7 +187,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.4,
     shadowRadius: 2,
-
     elevation: 5,
   },
   separatorAlign: {
@@ -203,7 +202,7 @@ const styles = StyleSheet.create({
   },
   redMore: {
     margin: 10,
-    color: '#3D99EE',
+    color: Colors.lighBlue,
     fontWeight: 'bold',
   },
   ratingRev: {
@@ -220,11 +219,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginRight: 40,
     marginTop: 15,
-    color: '#1E91B6',
+    color: Colors.lighBlue,
   },
   ratingText: {
     marginRight: 20,
-    color: '#50A2BD',
+    color: Colors.lighBlue,
   },
   startSvg: {
     flexDirection: 'row',
@@ -248,7 +247,7 @@ const styles = StyleSheet.create({
   },
   custumRating: {
     textAlign: 'center',
-    color: '#1E91B6',
+    color: Colors.lighBlue,
     marginVertical: 30,
     textDecorationLine: 'underline',
   },
