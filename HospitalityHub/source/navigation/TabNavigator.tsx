@@ -12,7 +12,11 @@ const Tab = createBottomTabNavigator();
 
 const HomeTabIcon = (focused: boolean) =>
   focused ? (
-    <MaterialCommunityIcons name="home-circle" size={30} />
+    <MaterialCommunityIcons
+      name="home-circle"
+      color={Colors.lighBlue}
+      size={30}
+    />
   ) : (
     <MaterialCommunityIcons
       name="home-circle-outline"
@@ -22,7 +26,11 @@ const HomeTabIcon = (focused: boolean) =>
   );
 const BookedTabIcon = (focused: boolean) =>
   focused ? (
-    <MaterialCommunityIcons name="bookmark-multiple" size={30} />
+    <MaterialCommunityIcons
+      name="bookmark-multiple"
+      color={Colors.lighBlue}
+      size={30}
+    />
   ) : (
     <MaterialCommunityIcons
       name="bookmark-multiple-outline"
@@ -32,13 +40,21 @@ const BookedTabIcon = (focused: boolean) =>
   );
 const SavedTabIcon = (focused: boolean) =>
   focused ? (
-    <MaterialCommunityIcons name="heart-circle" size={30} />
+    <MaterialCommunityIcons
+      name="heart-circle"
+      color={Colors.lighBlue}
+      size={30}
+    />
   ) : (
     <MaterialCommunityIcons name="heart-circle-outline" size={30} />
   );
 const ProfileTabIcon = (focused: boolean) =>
   focused ? (
-    <MaterialCommunityIcons name="account-circle" size={30} />
+    <MaterialCommunityIcons
+      name="account-circle"
+      color={Colors.lighBlue}
+      size={30}
+    />
   ) : (
     <MaterialCommunityIcons
       name="account-circle-outline"
@@ -67,7 +83,7 @@ const TabNavigator = () => {
         component={Home}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: Colors.black,
+          tabBarActiveTintColor: Colors.lighBlue,
           tabBarIcon: ({focused}) => HomeTabIcon(focused),
         }}
       />
@@ -76,7 +92,7 @@ const TabNavigator = () => {
         component={BookingScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: Colors.black,
+          tabBarActiveTintColor: Colors.lighBlue,
           tabBarIcon: ({focused}) => BookedTabIcon(focused),
         }}
       />
@@ -85,7 +101,7 @@ const TabNavigator = () => {
         component={SavedScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: Colors.black,
+          tabBarActiveTintColor: Colors.lighBlue,
           tabBarIcon: ({focused}) => SavedTabIcon(focused),
         }}
       />
@@ -94,7 +110,7 @@ const TabNavigator = () => {
         component={ProfilePage}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: Colors.black,
+          tabBarActiveTintColor: Colors.lighBlue,
           tabBarIcon: ({focused}) => ProfileTabIcon(focused),
         }}
       />
