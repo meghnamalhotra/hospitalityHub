@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, TextInput, SafeAreaView, StyleSheet} from 'react-native';
 import {ProfileIcon} from '../assets/svgs';
+import Header from '../components/Header';
 
 const ProfileEdit = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <Header title="hi" />
       <View style={styles.centeredContent}>
         <ProfileIcon style={styles.profileIcon} />
         <Text style={styles.changePictureText}>Change Profile Picture</Text>
