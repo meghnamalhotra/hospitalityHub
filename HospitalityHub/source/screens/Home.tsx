@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/core';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
+  Alert,
 } from 'react-native';
 import {
   Car,
@@ -20,12 +21,33 @@ import {
 } from '../assets/svgs';
 import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
+import {BackHandler} from 'react-native';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
   const navigation = useNavigation<any>(); // TODO
   const handlePress = () => {
     navigation.navigate('Otp');
   };
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('Hold on!', 'Are you sure you want to exit the app?', [
+        {
+          text: 'Cancel',
+          onPress: () => null,
+          style: 'default',
+        },
+        {text: 'YES', onPress: () => BackHandler.exitApp()},
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => backHandler.remove();
+  }, []);
   const DATA = [
     {
       id: 1,
@@ -56,6 +78,7 @@ const Home = () => {
         <FlatList
           data={DATA}
           horizontal
+          showsHorizontalScrollIndicator={false}
           keyExtractor={item => item.id.toString()}
           renderItem={({item}) => (
             <View style={styles.svgcontainer}>
@@ -113,7 +136,7 @@ const Home = () => {
           <Text style={styles.ratingText}>234 Ratings</Text>
         </View>
         <View style={styles.seperater}>
-          <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+          <Separator height={1} width={'100%'} backgroundColor={'#CFCFCF'} />
         </View>
         <View style={styles.separatorAlign}>
           <View style={styles.middleSeperater}>
@@ -122,24 +145,24 @@ const Home = () => {
           </View>
         </View>
         <View style={styles.seperater}>
-          <Separator height={4} width={'100%'} color={'#1E91B6'} />
+          <Separator height={4} width={'100%'} backgroundColor={'#1E91B6'} />
         </View>
         <View style={styles.ratingCnt}>
           <Text style={styles.fontTxt}>Comfort</Text>
           <Text style={styles.fontTxt}>10</Text>
         </View>
         <View style={styles.seperater}>
-          <Separator height={4} width={'100%'} color={'#1E91B6'} />
+          <Separator height={4} width={'100%'} backgroundColor={'#1E91B6'} />
         </View>
         <View style={styles.ratingCnt}>
           <Text style={styles.fontTxt}>Facilities</Text>
           <Text style={styles.fontTxt}>10</Text>
         </View>
         <View style={styles.seperater}>
-          <Separator height={4} width={'100%'} color={'#1E91B6'} />
+          <Separator height={4} width={'100%'} backgroundColor={'#1E91B6'} />
         </View>
         <View style={styles.bottomSeperater}>
-          <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+          <Separator height={1} width={'100%'} backgroundColor={'#CFCFCF'} />
         </View>
         <TouchableOpacity
           onPress={() => {
