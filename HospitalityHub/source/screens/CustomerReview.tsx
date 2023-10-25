@@ -67,9 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   upper: {
-    flex: 0.25,
     marginHorizontal: '5%',
-    // backgroundColor: 'pink',
   },
   rating: {
     flexDirection: 'row',
@@ -99,8 +97,8 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   flatlist: {
-    flex: 0.75,
-    marginTop: 15,
+    flex: 1,
+    marginTop: '4%',
   },
   reviewContainer: {
     flexDirection: 'row',
