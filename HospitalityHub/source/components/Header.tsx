@@ -35,12 +35,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: '3%',
-    paddingTop: 12,
     margin: 16,
   },
   uppertext: {
     fontFamily: typography.primary,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: '600',
     marginLeft: '5%',
     color: Colors.black,
