@@ -10,6 +10,8 @@ export const Colors = {
   backgroundColor: '#F5F9FF',
   lighBlue: '#1E91B6',
   yellow: '#F28F3B',
+  drawergrey: '#f6f6f6',
+  drawerblue: '#0A76BF',
   blueGradient1: 'rgba(84, 53, 255, 1)',
   blueGradient2: 'rgba(54, 200, 246, 1)',
   blueGradient3: 'rgba(160, 251, 205, 1)',

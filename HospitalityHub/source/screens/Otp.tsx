@@ -117,7 +117,7 @@ const Otp = () => {
       <View style={styles.buttonContainer}>
         <Button
           title="Verify OTP"
-          onPress={() => navigation.navigate('TabNavigator')}
+          onPress={() => navigation.navigate('DrawerNavigator')}
           disabled={
             f1 !== '' && f2 !== '' && f3 !== '' && f4 !== '' ? false : true
           }
