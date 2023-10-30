@@ -22,9 +22,10 @@ import {
 import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
 import {BackHandler} from 'react-native';
+import Menu from '../components/menu';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
-  const navigation = useNavigation<any>(); // TODO
+  const navigation = useNavigation<any>();
   const handlePress = () => {
     navigation.navigate('Otp');
   };
@@ -65,7 +66,10 @@ const Home = () => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <Menu Color={Colors.white} />
+        {/* <View> */}
         <HotelImgae height={'500'} style={styles.hotelsvg} />
+        {/* </View> */}
         <Text style={styles.headerTxt}>Lemon Tree Premier Pune</Text>
         <View style={styles.locationTxt}>
           <Location />

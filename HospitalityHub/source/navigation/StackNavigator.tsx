@@ -15,6 +15,7 @@ import Faq from '../screens/Faq';
 import ProfileEdit from '../screens/ProfileEdit';
 import TermsScreen from '../screens/TermsScreen';
 import CustomerReview from '../screens/CustomerReview';
+import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,11 @@ const StackNavigator = () => {
         <Stack.Screen
           name="Otp"
           component={Otp}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DrawerNavigator"
+          component={DrawerNavigator}
           options={{headerShown: false}}
         />
         <Stack.Screen

@@ -116,7 +116,7 @@ const TabNavigator = () => {
           tabBarIcon: ({focused}) => SavedTabIcon(focused),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Profile"
         component={ProfilePage}
         options={{
@@ -124,7 +124,7 @@ const TabNavigator = () => {
           tabBarActiveTintColor: Colors.lighBlue,
           tabBarIcon: ({focused}) => ProfileTabIcon(focused),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };

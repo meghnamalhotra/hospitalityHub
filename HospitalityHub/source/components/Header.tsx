@@ -1,5 +1,3 @@
-// Header.js
-
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icons from 'react-native-vector-icons/AntDesign';
