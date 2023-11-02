@@ -27,7 +27,7 @@ const Home = () => {
   const [redMore, setRedMore] = useState(false);
   const navigation = useNavigation<any>();
   const handlePress = () => {
-    navigation.navigate('Otp');
+    navigation.navigate('RoomListings');
   };
   useEffect(() => {
     const backAction = () => {
