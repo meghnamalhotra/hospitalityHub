@@ -21,6 +21,10 @@ import SupportImg from './SupportImage.svg';
 import MinusCircle from './minus-circle.svg';
 import PlusCircle from './plus-circle.svg';
 import PeopleGroup from './Avatar group.svg';
+import Frame from './Frame 367.svg';
+import Cup from './cup.svg';
+import Ac from './ac.svg';
+import Bathroom from './bathroom.svg';
 export {
   PeopleGroup,
   PlusCircle,
@@ -45,4 +49,8 @@ export {
   ProfileIcon,
   Avatar,
   Navigate,
+  Frame,
+  Cup,
+  Ac,
+  Bathroom,
 };
