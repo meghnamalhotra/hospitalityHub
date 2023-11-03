@@ -25,6 +25,9 @@ import Frame from './Frame 367.svg';
 import Cup from './cup.svg';
 import Ac from './ac.svg';
 import Bathroom from './bathroom.svg';
+import Fall from './fall.svg';
+import RateIcon from './rateIcon.svg';
+
 export {
   PeopleGroup,
   PlusCircle,
@@ -53,4 +56,6 @@ export {
   Cup,
   Ac,
   Bathroom,
+  Fall,
+  RateIcon,
 };
