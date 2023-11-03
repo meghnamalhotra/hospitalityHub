@@ -1,15 +1,79 @@
-import React from 'react';
-import {View, Text, TextInput, SafeAreaView, StyleSheet} from 'react-native';
-import {ProfileIcon} from '../assets/svgs';
-import Header from '../components/Header';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  ImageBackground,
+} from 'react-native';
+import ImagePicker from 'react-native-image-crop-picker';
+import {Colors} from '../theme/colors';
 
 const ProfileEdit = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [image, setImage] = useState('https://api.multiavatar.com/Binx.svg');
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+  const takePhotoFromCamera = () => {
+    ImagePicker.openCamera({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+    });
+  };
+  const choosePhotoFromLibrary = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+    });
+  };
+
+  const renderItem = () => (
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={isModalVisible}
+      onRequestClose={toggleModal}>
+      <View style={styles.modalContainer}>
+        <View style={styles.modalContent}>
+          <Text style={styles.panelTitle}>Upload Photo</Text>
+          <TouchableOpacity
+            style={styles.panelButton}
+            onPress={takePhotoFromCamera}>
+            <Text style={styles.panelButtonTitle}>Take Photo</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.panelButton}
+            onPress={choosePhotoFromLibrary}>
+            <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.panelButton} onPress={toggleModal}>
+            <Text style={styles.panelButtonTitle}>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="hi" />
       <View style={styles.centeredContent}>
-        <ProfileIcon style={styles.profileIcon} />
-        <Text style={styles.changePictureText}>Change Profile Picture</Text>
+        <ImageBackground style={styles.profileIcon} source={{uri: image}} />
+        <TouchableOpacity onPress={toggleModal}>
+          <Text style={styles.changePictureText}>Change Profile Picture</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.inputContainer}>
         <TextInput
@@ -41,6 +105,7 @@ const ProfileEdit = () => {
           Not You ? <Text style={styles.blackText}>Log Out</Text>
         </Text>
       </View>
+      {renderItem()}
     </SafeAreaView>
   );
 };
@@ -49,16 +114,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#F5F9FF',
+    backgroundColor: Colors.backgroundColor,
   },
   centeredContent: {
     alignItems: 'center',
     marginBottom: 20,
   },
   profileIcon: {
-    width: 80,
-    height: 80,
-    marginBottom: 10,
+    width: 100,
+    height: 100,
+    marginBottom: 20,
+    borderRadius: 100,
+    overflow: 'hidden',
   },
   changePictureText: {
     marginTop: 8,
@@ -80,6 +147,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 8,
     fontSize: 16,
+    backgroundColor: Colors.backgroundColor,
   },
   changePasswordContainer: {
     flexDirection: 'row',
@@ -103,6 +171,37 @@ const styles = StyleSheet.create({
   },
   blackText: {
     color: '#1E91B6',
+  },
+  panel: {
+    flex: 1,
+  },
+  panelTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#1E91B6',
+    textAlign: 'center',
+  },
+  panelButton: {
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: '#e6395c',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  panelButtonTitle: {
+    fontSize: 16,
+    color: 'white',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    backgroundColor: '#f5f0f1',
+    padding: 20,
+    borderRadius: 10,
+    width: '100%',
   },
 });
 
