@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   SafeAreaView,
@@ -10,6 +10,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  Alert,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
@@ -18,9 +19,18 @@ import {Colors} from '../theme/colors';
 import {typography} from '../theme/typography';
 
 const Registration = () => {
+  const mobileRegex = /^[0]?[456789]\d{9}$/;
+  const [isNumber, setNumber] = useState<any>(0);
+  const [isNumberValid, setNumberValid] = useState<any>([]);
   const navigation = useNavigation<any>();
   const handlePress = () => {
-    navigation.navigate('Otp');
+    if (!isNumber) {
+      Alert.alert('Enter mobile number to continue');
+    } else if (!isNumberValid) {
+      Alert.alert('Invalid Mobile No.');
+    } else {
+      navigation.navigate('Otp');
+    }
   };
 
   return (
@@ -63,7 +73,12 @@ const Registration = () => {
                 placeholder="Enter Mobile Number"
                 style={styles.inputText}
                 placeholderTextColor={Colors.lightgray}
+                keyboardType="numeric"
                 maxLength={10}
+                onChangeText={value => {
+                  setNumber(value);
+                  setNumberValid(value.match(mobileRegex));
+                }}
               />
             </View>
           </View>
