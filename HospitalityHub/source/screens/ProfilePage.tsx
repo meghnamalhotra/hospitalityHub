@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Navigate, ProfileIcon} from '../assets/svgs';
 import {Colors} from '../theme/colors';
+import {Navigate, ProfileIcon} from '../assets/svgs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ProfilePage = () => {
