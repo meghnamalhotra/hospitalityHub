@@ -1,35 +1,35 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, {useEffect, useState} from 'react';
+import {View, Text, SafeAreaView, StyleSheet, Modal} from 'react-native';
 import {Image} from '../assets/svgs';
+import {Colors} from '../theme/colors';
+import {Button} from '../components';
 
 const ErrorScreen = () => {
+  useEffect(() => {
+    setShowModal(true);
+  }, []);
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = () => {
+    setShowModal(false);
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <Image style={styles.image} />
-      <View style={styles.centeredContent}>
-        <Text style={styles.text1}>We're sorry.......</Text>
-        <Text style={styles.text2}>
-          An unexpected error have{'\n'}been occurred
-        </Text>
-      </View>
-      <TouchableOpacity style={styles.buttonContainer}>
-        <LinearGradient
-          colors={['#5435FF', '#36C8F6', '#A0FBCD']}
-          style={styles.buttonGradient}>
-          <Text
-            style={styles.buttonText}
-            onPress={() => console.log('Navigate to Home')}>
-            Go back to home
-          </Text>
-        </LinearGradient>
-      </TouchableOpacity>
+      <Modal animationType="slide" transparent={true} visible={showModal}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Image style={styles.image} />
+            <View style={styles.centeredContent}>
+              <Text style={styles.text1}>We're sorry.......</Text>
+              <Text style={styles.text2}>
+                An unexpected error have{'\n'}been occurred
+              </Text>
+            </View>
+            <View style={styles.btn}>
+              <Button title="Go To Home" onPress={closeModal} />
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -42,6 +42,17 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: Colors.white,
+    padding: 20,
+    borderRadius: 10,
+  },
   centeredContent: {
     flex: 1,
     justifyContent: 'center',
@@ -52,17 +63,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat',
     fontWeight: '500',
     marginBottom: 16,
-    color: 'black',
+    color: Colors.black,
   },
   text2: {
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 24,
-    color: 'black',
+    color: Colors.black,
   },
   buttonContainer: {
     marginBottom: 32,
-    marginHorizontal: 16,
+    marginLeft: 16,
   },
   buttonGradient: {
     borderRadius: 8,
@@ -70,8 +81,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    color: 'white',
+    color: Colors.white,
     fontWeight: 'bold',
+  },
+  btn: {
+    marginLeft: '10%',
+    marginRight: '10%',
   },
 });
 

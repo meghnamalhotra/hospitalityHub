@@ -48,12 +48,12 @@ const SavedScreen = () => {
                     <Icon
                       name={ratingValue <= selectedRating ? 'star' : 'staro'}
                       size={30}
-                      color={'black'}
+                      color={Colors.lighBlue}
                     />
                   </TouchableOpacity>
                 ))}
               </View>
-              <Button title="Close Modal" onPress={closeModal} />
+              <Button title="Close" onPress={closeModal} />
             </View>
           </View>
         </Modal>
