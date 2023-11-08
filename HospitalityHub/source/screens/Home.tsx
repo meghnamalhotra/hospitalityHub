@@ -10,6 +10,7 @@ import {
   FlatList,
   Alert,
 } from 'react-native';
+
 import {
   Car,
   HalfStar,

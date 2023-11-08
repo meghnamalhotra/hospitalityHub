@@ -2,13 +2,13 @@ export const typography = {
   /**
    * The primary font.  Used in most places.
    */
-  primary: 'Poppins-Regular',
+  primary: 'Montserrat-Regular',
   /**
    * An alternate font used for titles and stuff.
    */
-  secondary: 'Poppins-Medium',
+  secondary: 'Montserrat-Medium',
   /**
    * An alternate font used for perhaps Page Header and etc.
    */
-  error: 'Poppins-SemiBold',
+  error: 'Montserrat-SemiBold',
 };

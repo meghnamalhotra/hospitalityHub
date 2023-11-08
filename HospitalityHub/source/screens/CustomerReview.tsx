@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   },
   rating: {
     flexDirection: 'row',
-    //backgroundColor: 'red',
     justifyContent: 'space-between',
   },
   uppertext: {
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
   },
   flatlist: {
     flex: 1,
-    marginTop: '4%',
+    marginTop: '1%',
   },
   reviewContainer: {
     flexDirection: 'row',
@@ -106,7 +105,6 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: '20%',
-    //backgroundColor: 'pink',
   },
   image: {
     height: 60,

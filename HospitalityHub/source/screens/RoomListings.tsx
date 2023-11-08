@@ -89,13 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     marginBottom: 20,
     margin: 10,
-    //flexDirection: 'row',
-    // marginBottom: 18,
-    // borderRadius: 10,
-    // margin: 10,
-    // paddingVertical: 20,
-    // paddingLeft: 15,
-    // paddingRight: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -106,7 +99,6 @@ const styles = StyleSheet.create({
     elevation: 5,
     activeOpacity: 0.7,
     borderRadius: 13,
-    //backgroundColor: 'red',
   },
   textContainer: {
     flex: 2,
@@ -140,8 +132,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   button: {
-    //marginTop: '7%',
-    //backgroundColor: 'red',
     alignSelf: 'center',
     height: '12%',
     width: '90%',
@@ -150,71 +140,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 2,
     borderColor: '#1E91B6',
-  },
-  Text: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    marginLeft: '6%',
-    lineHeight: 22,
-  },
-  hotelInfoContainer: {
-    alignItems: 'center',
-  },
-  hotelName: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    flexDirection: 'row',
-    marginLeft: 22,
-    letterSpacing: 2,
-    marginTop: 10,
-  },
-  location: {
-    color: '#6D6D6D',
-    fontWeight: '600',
-    fontSize: 16,
-    marginRight: '50%',
-  },
-  paymentTitle: {
-    fontWeight: '500',
-    fontSize: 16,
-    color: '#71717A',
-  },
-  paymentDetailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  paymentPercentage: {
-    color: '#22C55E',
-    fontWeight: 'bold',
-  },
-  paymentAmount: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#18181B',
-  },
-  bookingTitle: {
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  bookingDetailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  bookingPercentage: {
-    color: '#EF4444',
-    fontWeight: 'bold',
-  },
-  bookingCount: {
-    fontWeight: 'bold',
-    fontSize: 20,
-  },
-  text: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    marginLeft: '6%',
-    lineHeight: 30,
   },
   select: {
     alignSelf: 'center',
