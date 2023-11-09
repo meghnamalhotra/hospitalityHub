@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/core';
-import React, {useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -8,9 +8,10 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {MinusCircle, PeopleGroup, PlusCircle, SupportImg} from '../assets/svgs';
+import {PeopleGroup, SupportImg} from '../assets/svgs';
 import {Colors} from '../theme/colors';
 import {Separator} from '../components';
+import Show from '../constants/Show';
 
 const Faq = () => {
   const navigation = useNavigation<any>();
@@ -34,7 +35,7 @@ const Faq = () => {
               Is there a free trial available?
             </Text>
             <TouchableOpacity>
-              <MinusCircle />
+              <Show />
             </TouchableOpacity>
           </View>
           <Text style={{marginLeft: 10, marginRight: 33}}>
@@ -50,7 +51,7 @@ const Faq = () => {
               What is your cancellation policy?
             </Text>
             <TouchableOpacity>
-              <PlusCircle />
+              <Show />
             </TouchableOpacity>
           </View>
           <View style={styles.SeparatorGap}>
@@ -61,7 +62,7 @@ const Faq = () => {
               Can other info be added to an invoice?
             </Text>
             <TouchableOpacity>
-              <PlusCircle />
+              <Show />
             </TouchableOpacity>
           </View>
           <View style={styles.SeparatorGap}>
@@ -70,7 +71,7 @@ const Faq = () => {
           <View style={styles.midContainerHeading}>
             <Text style={styles.containerTxt}>How does billing work?</Text>
             <TouchableOpacity>
-              <PlusCircle />
+              <Show />
             </TouchableOpacity>
           </View>
           <View style={styles.SeparatorGap}>
@@ -81,7 +82,7 @@ const Faq = () => {
               How do I change my account email?
             </Text>
             <TouchableOpacity>
-              <PlusCircle />
+              <Show />
             </TouchableOpacity>
           </View>
           <View style={styles.SeparatorGap}>
