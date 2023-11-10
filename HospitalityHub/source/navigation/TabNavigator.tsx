@@ -8,6 +8,7 @@ import SavedScreen from '../screens/SavedScreen';
 
 import {Colors} from '../theme/colors';
 import {Dimensions, Platform} from 'react-native';
+import Booked from '../screens/MyBooking';
 
 const Tab = createBottomTabNavigator();
 
@@ -100,7 +101,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="Booked"
-        component={BookingScreen}
+        component={Booked}
         options={{
           headerShown: false,
           tabBarActiveTintColor: Colors.lighBlue,

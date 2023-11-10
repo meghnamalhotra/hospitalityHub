@@ -18,7 +18,7 @@ import {
   Location,
   Star,
   Swimming,
-  Wifi,
+  Wifihome,
 } from '../assets/svgs';
 import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
@@ -61,7 +61,7 @@ const Home = () => {
     },
     {
       id: 3,
-      image: <Wifi />,
+      image: <Wifihome />,
     },
   ];
   return (
