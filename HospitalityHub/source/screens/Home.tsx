@@ -61,11 +61,7 @@ const Home = () => {
     },
     {
       id: 3,
-
       image: <Wifihome />,
-
-      image: <Swimming />,
-
     },
   ];
   return (
