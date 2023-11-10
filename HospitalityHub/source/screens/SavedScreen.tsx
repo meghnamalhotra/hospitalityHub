@@ -6,13 +6,12 @@ import {
   Modal,
   Button,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import {Colors} from '../theme/colors';
 import Menu from '../components/menu';
 import {RateIcon} from '../assets/svgs';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-
 const SavedScreen = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedRating, setSelectedRating] = useState(0);
@@ -48,12 +47,14 @@ const SavedScreen = () => {
                     <Icon
                       name={ratingValue <= selectedRating ? 'star' : 'staro'}
                       size={30}
-                      color={'black'}
+                      color={Colors.lighBlue}
                     />
                   </TouchableOpacity>
                 ))}
               </View>
-              <Button title="Close Modal" onPress={closeModal} />
+              <View style={styles.bt}>
+                <Button title="Close" onPress={closeModal} />
+              </View>
             </View>
           </View>
         </Modal>
@@ -89,8 +90,11 @@ const styles = StyleSheet.create({
   },
   star: {
     flexDirection: 'row',
-    marginLeft: '14%',
+    marginLeft: '12%',
     marginTop: '5%',
+  },
+  bt: {
+    marginTop: '4%',
   },
 });
 
