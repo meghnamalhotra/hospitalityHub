@@ -18,6 +18,12 @@ const Faq = () => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <Show
+          message1={'hello there'}
+          message2={
+            'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+          }
+        />
         <View style={styles.topContainer}>
           <View style={styles.SvgCnt}>
             <SupportImg />
@@ -30,61 +36,48 @@ const Faq = () => {
           <Text style={[styles.navTxt, {fontSize: 24}]}>
             Frequently asked questions
           </Text>
-          <View style={styles.midContainerHeading}>
-            <Text style={styles.containerTxt}>
-              Is there a free trial available?
-            </Text>
-            <TouchableOpacity>
-              <Show />
-            </TouchableOpacity>
-          </View>
-          <Text style={{marginLeft: 10, marginRight: 33}}>
-            Yes, you can try us for free for 30 days. If you want, we’ll provide
-            you with a free, personalized 30-minute onboarding call to get you
-            up and running as soon as possible.
-          </Text>
+          <Show
+            message1={'Is there a free trial available?'}
+            message2={
+              'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+            }
+          />
           <View style={styles.SeparatorGap}>
             <Separator height={1} width={'100%'} color={'#CFCFCF'} />
           </View>
-          <View style={styles.midContainerHeading}>
-            <Text style={styles.containerTxt}>
-              What is your cancellation policy?
-            </Text>
-            <TouchableOpacity>
-              <Show />
-            </TouchableOpacity>
-          </View>
+          <Show
+            message1={'What is your cancellation policy?'}
+            message2={
+              'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+            }
+          />
           <View style={styles.SeparatorGap}>
             <Separator height={1} width={'100%'} color={'#CFCFCF'} />
           </View>
-          <View style={styles.midContainerHeading}>
-            <Text style={styles.containerTxt}>
-              Can other info be added to an invoice?
-            </Text>
-            <TouchableOpacity>
-              <Show />
-            </TouchableOpacity>
-          </View>
+          <Show
+            message1={'Can other info be added to an invoice?'}
+            message2={
+              'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+            }
+          />
           <View style={styles.SeparatorGap}>
             <Separator height={1} width={'100%'} color={'#CFCFCF'} />
           </View>
-          <View style={styles.midContainerHeading}>
-            <Text style={styles.containerTxt}>How does billing work?</Text>
-            <TouchableOpacity>
-              <Show />
-            </TouchableOpacity>
-          </View>
+          <Show
+            message1={'How does billing work?'}
+            message2={
+              'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+            }
+          />
           <View style={styles.SeparatorGap}>
             <Separator height={1} width={'100%'} color={'#CFCFCF'} />
           </View>
-          <View style={styles.midContainerHeading}>
-            <Text style={styles.containerTxt}>
-              How do I change my account email?
-            </Text>
-            <TouchableOpacity>
-              <Show />
-            </TouchableOpacity>
-          </View>
+          <Show
+            message1={'How do I change my account email?'}
+            message2={
+              'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+            }
+          />
           <View style={styles.SeparatorGap}>
             <Separator height={1} width={'100%'} color={'#CFCFCF'} />
           </View>
@@ -124,14 +117,6 @@ const styles = StyleSheet.create({
   topContainer: {
     backgroundColor: Colors.backgroundColor,
     paddingBottom: 30,
-  },
-  midContainerHeading: {
-    margin: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  containerTxt: {
-    fontWeight: 'bold',
   },
   SeparatorGap: {
     marginTop: 33,
