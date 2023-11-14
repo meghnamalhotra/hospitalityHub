@@ -15,15 +15,12 @@ import Show from '../constants/Show';
 
 const Faq = () => {
   const navigation = useNavigation<any>();
+  const handlePress = () => {
+    navigation.navigate('Location');
+  };
   return (
     <SafeAreaView>
       <ScrollView>
-        <Show
-          message1={'hello there'}
-          message2={
-            'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
-          }
-        />
         <View style={styles.topContainer}>
           <View style={styles.SvgCnt}>
             <SupportImg />
@@ -43,7 +40,7 @@ const Faq = () => {
             }
           />
           <View style={styles.SeparatorGap}>
-            <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+            <Separator height={1} width={'100%'} backgroundColor={''} />
           </View>
           <Show
             message1={'What is your cancellation policy?'}
@@ -52,7 +49,7 @@ const Faq = () => {
             }
           />
           <View style={styles.SeparatorGap}>
-            <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+            <Separator height={1} width={'100%'} backgroundColor={''} />
           </View>
           <Show
             message1={'Can other info be added to an invoice?'}
@@ -61,7 +58,7 @@ const Faq = () => {
             }
           />
           <View style={styles.SeparatorGap}>
-            <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+            <Separator height={1} width={'100%'} backgroundColor={''} />
           </View>
           <Show
             message1={'How does billing work?'}
@@ -70,7 +67,7 @@ const Faq = () => {
             }
           />
           <View style={styles.SeparatorGap}>
-            <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+            <Separator height={1} width={'100%'} backgroundColor={''} />
           </View>
           <Show
             message1={'How do I change my account email?'}
@@ -79,7 +76,7 @@ const Faq = () => {
             }
           />
           <View style={styles.SeparatorGap}>
-            <Separator height={1} width={'100%'} color={'#CFCFCF'} />
+            <Separator height={1} width={'100%'} backgroundColor={''} />
           </View>
         </View>
         <View style={styles.BottomContainer}>
@@ -92,7 +89,7 @@ const Faq = () => {
             friendly team.
           </Text>
           <View style={styles.buttn}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handlePress}>
               <Text style={{textAlign: 'center', color: Colors.white}}>
                 Get in Touch
               </Text>
