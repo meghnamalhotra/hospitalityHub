@@ -36,11 +36,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     paddingVertical: 10,
+    marginHorizontal: '2%',
     fontFamily: typography.secondary,
   },
   confirmButton: {
     marginTop: '2%',
-    width: '90%',
+    width: '100%',
     height:
       Dimensions.get('screen').height > 700
         ? Dimensions.get('screen').height * 0.06
