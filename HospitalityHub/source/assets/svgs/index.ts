@@ -29,8 +29,10 @@ import Fall from './fall.svg';
 import RateIcon from './rateIcon.svg';
 import Line from './Line 9.svg';
 import Wifihome from './material-symbols_wifi.svg';
+import BackArrow from './backArrow.svg';
 export {
   PeopleGroup,
+  BackArrow,
   PlusCircle,
   MinusCircle,
   DeckSVG,

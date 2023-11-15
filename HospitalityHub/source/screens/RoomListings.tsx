@@ -10,8 +10,14 @@ import {
 } from 'react-native';
 import {Wifi, Frame, Bathroom, Cup, Ac} from '../assets/svgs';
 import Header from '../components/Header';
+import {useNavigation} from '@react-navigation/native';
 
 const RoomListings = () => {
+  const navigation = useNavigation<any>();
+  const handlePress = () => {
+    navigation.navigate('BookingPage2');
+  };
+
   const renderItem = ({item}) => {
     return (
       <>
@@ -55,7 +61,7 @@ const RoomListings = () => {
               <Frame style={styles.image} />
             </View>
           </View>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handlePress}>
             <Text style={styles.select}>Select</Text>
           </TouchableOpacity>
         </View>

@@ -18,6 +18,7 @@ import CustomerReview from '../screens/CustomerReview';
 import DrawerNavigator from './DrawerNavigator';
 import RoomListings from '../screens/RoomListings';
 import Location from '../screens/Location';
+import BookingPage2 from '../screens/BookingPage2';
 
 const Stack = createNativeStackNavigator();
 
@@ -71,7 +72,12 @@ const StackNavigator = () => {
           component={RoomListings}
           options={{headerShown: false}}
         />
-         <Stack.Screen
+        <Stack.Screen
+          name="BookingPage2"
+          component={BookingPage2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name="Location"
           component={Location}
           options={{headerShown: false}}
