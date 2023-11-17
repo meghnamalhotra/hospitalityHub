@@ -91,14 +91,14 @@ const Booked = () => {
             </View>
             <View>
               <Text style={styles.txt2}>Do you want to cancel your</Text>
-              <Text style={styles.txt3}>booking at M Mahal Palace Delhi</Text>
+              <Text style={styles.txt3}>booking at Radisson Blue Delhi</Text>
               <Text style={styles.txt4}>from 23 Mar to 25 Mar 2023 </Text>
             </View>
             <View style={styles.btn2}>
               <TouchableOpacity
                 style={styles.verifyOtpBtn}
                 onPress={toggleModal}>
-                <Text>Back</Text>
+                <Text style={styles.bck}>Back</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.verifyOtpBtn2}
@@ -210,6 +210,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: '4%',
   },
+  bck: {
+    color: Colors.white,
+    fontSize: 15,
+  },
   button1: {
     height: 50,
     width: '49%',
@@ -290,12 +294,12 @@ const styles = StyleSheet.create({
   },
   txt2: {
     marginTop: '10%',
-    marginLeft: '17%',
+    marginLeft: '16%',
     fontSize: 17,
     fontWeight: '500',
   },
   txt3: {
-    marginLeft: '10%',
+    marginLeft: '12%',
     fontSize: 17,
     fontWeight: '500',
   },
