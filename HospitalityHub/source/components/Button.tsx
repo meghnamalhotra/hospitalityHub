@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   confirmButton: {
     marginTop: '2%',
-    width: '100%',
+    width: '94%',
     height:
       Dimensions.get('screen').height > 700
         ? Dimensions.get('screen').height * 0.06
