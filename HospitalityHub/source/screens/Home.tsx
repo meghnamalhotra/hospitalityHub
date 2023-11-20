@@ -11,19 +11,13 @@ import {
   Alert,
 } from 'react-native';
 
-import {
-  Car,
-  HalfStar,
-  HotelImgae,
-  Location,
-  Star,
-  Swimming,
-  Wifihome,
-} from '../assets/svgs';
+import {Car, HotelImgae, Location, Swimming, Wifihome} from '../assets/svgs';
+import {ratings} from '../constants/ratings';
 import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
 import {BackHandler} from 'react-native';
 import Menu from '../components/menu';
+import StarRating from '../components/StarRating';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
   const navigation = useNavigation<any>();
@@ -128,17 +122,22 @@ const Home = () => {
         </TouchableOpacity>
         <View style={styles.ratingRev}>
           <Text style={styles.ratingRevCont}>Rating & Reviews</Text>
-          <Text style={styles.ratingNum}>4.5</Text>
+          <Text style={styles.ratingNum}>{ratings.average_rating}</Text>
         </View>
         <View style={styles.startSvg}>
-          <View style={styles.ratingContainer}>
+          {/* <View style={styles.ratingContainer}>
             <Star />
             <Star />
             <Star />
             <Star />
             <HalfStar />
-          </View>
-          <Text style={styles.ratingText}>234 Ratings</Text>
+          </View> */}
+          <StarRating
+            rating={ratings.average_rating}
+            size={18}
+            color={Colors.lighBlue}
+          />
+          <Text style={styles.ratingText}>{ratings.total_ratings} Ratings</Text>
         </View>
         <View style={styles.seperater}>
           <Separator height={1} width={'100%'} backgroundColor={'#CFCFCF'} />
@@ -260,6 +259,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     color: Colors.lighBlue,
   },
+
   startSvg: {
     flexDirection: 'row',
     marginLeft: 17,
