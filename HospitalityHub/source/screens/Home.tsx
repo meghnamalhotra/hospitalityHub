@@ -9,17 +9,28 @@ import {
   TouchableOpacity,
   FlatList,
   Alert,
+  Modal,
 } from 'react-native';
-
-import {Car, HotelImgae, Location, Swimming, Wifihome} from '../assets/svgs';
-import {ratings} from '../constants/ratings';
+import {
+  Car,
+  HalfStar,
+  HotelImgae,
+  Location,
+  Star,
+  Swimming,
+  Wifi,
+} from '../assets/svgs';
 import {Colors} from '../theme/colors';
 import {Button, Separator} from '../components';
 import {BackHandler} from 'react-native';
 import Menu from '../components/menu';
-import StarRating from '../components/StarRating';
+import Calendar from './CalendarPicker';
 const Home = () => {
   const [redMore, setRedMore] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
   const navigation = useNavigation<any>();
   const handlePress = () => {
     navigation.navigate('RoomListings');
@@ -55,7 +66,7 @@ const Home = () => {
     },
     {
       id: 3,
-      image: <Wifihome />,
+      image: <Wifi />,
     },
   ];
   return (
@@ -122,22 +133,17 @@ const Home = () => {
         </TouchableOpacity>
         <View style={styles.ratingRev}>
           <Text style={styles.ratingRevCont}>Rating & Reviews</Text>
-          <Text style={styles.ratingNum}>{ratings.average_rating}</Text>
+          <Text style={styles.ratingNum}>4.5</Text>
         </View>
         <View style={styles.startSvg}>
-          {/* <View style={styles.ratingContainer}>
+          <View style={styles.ratingContainer}>
             <Star />
             <Star />
             <Star />
             <Star />
             <HalfStar />
-          </View> */}
-          <StarRating
-            rating={ratings.average_rating}
-            size={18}
-            color={Colors.lighBlue}
-          />
-          <Text style={styles.ratingText}>{ratings.total_ratings} Ratings</Text>
+          </View>
+          <Text style={styles.ratingText}>234 Ratings</Text>
         </View>
         <View style={styles.seperater}>
           <Separator height={1} width={'100%'} backgroundColor={'#CFCFCF'} />
@@ -174,7 +180,26 @@ const Home = () => {
           }}>
           <Text style={styles.custumRating}>View Customer Reviews</Text>
         </TouchableOpacity>
-        <Button title="Book Now" onPress={handlePress} />
+        <Button title="Book Now" onPress={toggleModal} />
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isModalVisible}
+          onRequestClose={toggleModal}>
+          <View style={styles.modalContainer}>
+            <Calendar />
+            <View style={styles.buttonContainer}>
+              <Button title="Back" onPress={toggleModal} />
+              <Button
+                title="Next"
+                onPress={() => {
+                  toggleModal();
+                  handlePress();
+                }}
+              />
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     </SafeAreaView>
   );
@@ -259,7 +284,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
     color: Colors.lighBlue,
   },
-
   startSvg: {
     flexDirection: 'row',
     marginLeft: 17,
@@ -294,6 +318,22 @@ const styles = StyleSheet.create({
   bottomSeperater: {
     marginHorizontal: 10,
     marginTop: 30,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    elevation: 5,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    width: 40,
   },
 });
 
