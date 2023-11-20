@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
+import { Colors } from '../theme/colors';
 
 const Calendar = (): any => {
   const onDateChange = (date, type) => {
@@ -17,9 +18,9 @@ const Calendar = (): any => {
         allowRangeSelection={true}
         minDate={minDate}
         maxDate={maxDate}
-        todayBackgroundColor="#f2e6ff"
-        selectedDayColor="#7300e6"
-        selectedDayTextColor="#FFFFFF"
+        todayBackgroundColor={Colors.lighBlue}
+        selectedDayColor={Colors.lighBlue}
+        selectedDayTextColor={Colors.white}
         onDateChange={onDateChange}
       />
     </View>
