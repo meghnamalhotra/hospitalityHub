@@ -17,7 +17,10 @@ import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import {Separator, Button} from '../components';
 import {Colors} from '../theme/colors';
 import {typography} from '../theme/typography';
-
+import {
+  GoogleSignin,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
 const Registration = () => {
   const mobileRegex = /^[0]?[456789]\d{9}$/;
   const [isNumber, setNumber] = useState<any>(0);
@@ -100,7 +103,29 @@ const Registration = () => {
           </View>
 
           <View style={styles.socialContainer}>
-            <TouchableOpacity style={styles.socialButton}>
+            <TouchableOpacity
+              style={styles.socialButton}
+              onPress={() => {
+                GoogleSignin.configure({
+                  iosClientId:
+                    '893241661192-v0kjcfee3k50kt3caltffjudi34u4mr1.apps.googleusercontent.com',
+                });
+                GoogleSignin.hasPlayServices()
+                  .then(hasPlayService => {
+                    if (hasPlayService) {
+                      GoogleSignin.signIn()
+                        .then(userInfo => {
+                          console.log(JSON.stringify(userInfo));
+                        })
+                        .catch(e => {
+                          console.log('ERROR IS: ' + JSON.stringify(e));
+                        });
+                    }
+                  })
+                  .catch(e => {
+                    console.log('ERROR IS: ' + JSON.stringify(e));
+                  });
+              }}>
               <GoogleSVG />
             </TouchableOpacity>
             <TouchableOpacity style={styles.socialButton}>
