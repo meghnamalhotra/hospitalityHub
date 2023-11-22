@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
-import { Colors } from '../theme/colors';
+import {Colors} from '../theme/colors';
 
 const Calendar = (): any => {
   const onDateChange = (date, type) => {
