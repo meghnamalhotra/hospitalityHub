@@ -12,6 +12,7 @@ import {
   Platform,
   Alert,
 } from 'react-native';
+import {LoginManager} from 'react-native-fbsdk-next';
 import {useNavigation} from '@react-navigation/native';
 import {DeckSVG, FbSVG, GoogleSVG, IndianFlag} from '../assets/svgs';
 import {Separator, Button} from '../components';
@@ -128,7 +129,29 @@ const Registration = () => {
               }}>
               <GoogleSVG />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.socialButton}>
+            <TouchableOpacity
+              style={styles.socialButton}
+              onPress={() => {
+                LoginManager.logInWithPermissions([
+                  'public_profile',
+                  'email',
+                ]).then(
+                  function (result) {
+                    if (result.isCancelled) {
+                      Alert.alert('Login Cancelled ' + JSON.stringify(result));
+                    } else {
+                      Alert.alert(
+                        'Login success with  permisssions: ' +
+                          result.grantedPermissions.toString(),
+                      );
+                      Alert.alert('Login Success ' + result.toString());
+                    }
+                  },
+                  function (error) {
+                    Alert.alert('Login failed with error: ' + error);
+                  },
+                );
+              }}>
               <FbSVG />
             </TouchableOpacity>
           </View>
