@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Modal,
   StyleSheet,
-} from 'react-native';
+} from 'react-native'; //bs
 import {Colors} from '../theme/colors';
 import Menu from '../components/menu';
 import {Fall} from '../assets/svgs';
